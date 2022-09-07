@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "15de63c3-9987-4702-950f-be33e113a01b",
+		"name": "Undabot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/undabot/index",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"undabot",
+						"index"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"term\": \"php\",\n    \"type\": \"issue\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/undabot/getTermScore",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"undabot",
+						"getTermScore"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GitHubApi",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.github.com/search/issues?q=php+type:issue&sort=created&order=asc",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"search",
+						"issues"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "php+type:issue"
+						},
+						{
+							"key": "sort",
+							"value": "created"
+						},
+						{
+							"key": "order",
+							"value": "asc"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
